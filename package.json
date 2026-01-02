@@ -1,13 +1,6 @@
 {
-  "name": "@Ronak-08/svelte-libyou",
+  "name": "svelte-libyou",
   "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Ronak-08/svelte-libyou.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run prepack",
