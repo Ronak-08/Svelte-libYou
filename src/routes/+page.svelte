@@ -3,24 +3,37 @@ import Button from "$lib/components/Button.svelte";
 import ButtonGroup from "$lib/components/ButtonGroup.svelte";
 import Loader from "$lib/components/Loader.svelte";
 import Textfield from "$lib/components/Textfield.svelte";
+import Sidebar from "$lib/components/Sidebar.svelte";
 
 function hello() {
   console.log("hello") 
 }
 
-let headerButton = [
-  {label: "New", action: () => hello(), style: "bg-primary px-3 text-on-primary"},
-  {label: "Hello", action: () => hello(), style: "bg-secondary text-on-secondary transition hover:bg-error-container hover:text-on-error-container"},
-  {label: "Hello", action: () => hello(), style: "border transition-all duration-300 border-outline-variant/80 hover:bg-error-container hover:text-on-error-container"},
-]
+
+  let viewMode = $state([]);
+  
+const tabs = [
+  { id: 'list', label: 'List View' },
+  { id: 'board', label: 'Board View' }
+];
+let isOpen = $state(false);
+  const toggleDrawer = () => (isOpen = !isOpen);
 </script>
+
+
+<Sidebar {isOpen}>
+  <div class="flex justify-between m-2">
+    <p class="text-2xl">Sidebar</p>
+    <Button class="md:hidden" onclick={toggleDrawer}>Close</Button>
+  </div>
+</Sidebar>
 
 <main class="p-3">
   <h1 class="text-3xl w-full text-center font-bold mb-3">Welcome</h1>
   <span class="p-2 opacity-70">Buttons</span>
   <div class="flex p-1 m-3 flex-wrap gap-2">
     <Button>Filled</Button>
-    <Button variant="normal">Normal</Button>
+    <Button onclick={toggleDrawer} variant="normal">Normal</Button>
     <Button variant="tonal">tonal</Button>
     <Button variant="outline">Outline</Button>
     <Button variant="text">Text</Button>
@@ -28,7 +41,10 @@ let headerButton = [
 
   <div class="flex p-1 flex-col">
     <span class="opacity-70 p-2">Button Group</span>
-    <ButtonGroup class="mt-4" items={headerButton}></ButtonGroup>
+<ButtonGroup items={tabs} bind:selected={viewMode} />
+
+<!-- Access data -->
+<p>Current View: {viewMode[0]?.label}</p>
   </div>
 
   <div class="flex p-2 flex-col">

@@ -8,4 +8,8 @@ export { default as Ripple } from './components/Ripple.svelte';
 export { default as Toast } from './components/Toast.svelte';
 export { default as Tabbar } from './components/Tabbar.svelte';
 export { default as CircularProgress } from './components/CircularProgress.svelte';
+export {default as Textfield} from './components/Textfield.svelte';
+export {default as Switch} from './components/Switch.svelte';
+export {default as Loader} from './components/Loader.svelte';
+export {default as Sidebar} from './components/Sidebar.svelte';
 
