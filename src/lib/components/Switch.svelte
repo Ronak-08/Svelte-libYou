@@ -25,19 +25,14 @@ function toggle() {
 >
   <div 
     class="relative w-13 h-8 rounded-full transition-colors duration-200
-    {checked ? 'bg-primary' : 'bg-surface-variant'}
+    {checked ? 'bg-primary' : 'bg-transparent border border-outline-variant'}
     {disabled ? 'opacity-50' : ''}"
   >
     <div 
-      class="absolute inset-0 rounded-full border-2 border-transparent transition-opacity duration-200
-      {checked ? 'opacity-0 border-outline-variant/80' : 'opacity-100'}"
-    ></div>
-
-    <div 
-      class="absolute top-1 transition-all duration-200 rounded-full bg-surface shadow-md
+      class="absolute top-1 transition-all active:scale-[1.1] duration-200 rounded-full bg-surface shadow-md
       {checked 
-        ? 'left-[calc(100%-28px)] w-6 h-6' 
-        : 'left-1 top-1.5 size-5 bg-on-primary'}"
+        ? 'left-[calc(100%-28px)] bg-on-primary w-6 h-6' 
+        : 'left-1.25 top-1.25 size-5 bg-surface-bright'}"
     >
     </div>
   </div>
@@ -48,9 +43,3 @@ function toggle() {
     </span>
   {/if}
 </button>
-
-<style>
-button:active:not(:disabled) > div:first-child {
-  transform: scale(0.95);
-}
-</style>

@@ -6,7 +6,7 @@ type Modal = {
 declare const Modal: import("svelte").Component<{
     children: any;
     show?: boolean;
-}, {}, "">;
+}, {}, "show">;
 type $$ComponentProps = {
     children: any;
     show?: boolean;

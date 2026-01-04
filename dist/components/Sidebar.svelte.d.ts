@@ -6,8 +6,10 @@ type Sidebar = {
 declare const Sidebar: import("svelte").Component<{
     children: any;
     isOpen?: boolean;
-}, {}, "">;
+    class: any;
+}, {}, "isOpen">;
 type $$ComponentProps = {
     children: any;
     isOpen?: boolean;
+    class: any;
 };

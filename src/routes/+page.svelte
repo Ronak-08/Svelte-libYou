@@ -4,6 +4,7 @@ import ButtonGroup from "$lib/components/ButtonGroup.svelte";
 import Loader from "$lib/components/Loader.svelte";
 import Textfield from "$lib/components/Textfield.svelte";
 import Sidebar from "$lib/components/Sidebar.svelte";
+    import Switch from "$lib/components/Switch.svelte";
 
 function hello() {
   console.log("hello") 
@@ -21,8 +22,8 @@ let isOpen = $state(false);
 </script>
 
 
-<Sidebar {isOpen}>
-  <div class="flex justify-between m-2">
+<Sidebar class="w-3/4" bind:isOpen>
+  <div class="flex w-full justify-between m-2">
     <p class="text-2xl">Sidebar</p>
     <Button class="md:hidden" onclick={toggleDrawer}>Close</Button>
   </div>
@@ -43,7 +44,6 @@ let isOpen = $state(false);
     <span class="opacity-70 p-2">Button Group</span>
 <ButtonGroup items={tabs} bind:selected={viewMode} />
 
-<!-- Access data -->
 <p>Current View: {viewMode[0]?.label}</p>
   </div>
 
@@ -53,6 +53,7 @@ let isOpen = $state(false);
   </div>
 
  <Textfield placeholder="Type your text.." type="text" /> 
+  <Switch />
 
 </main>
 

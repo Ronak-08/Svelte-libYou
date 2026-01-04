@@ -44,6 +44,9 @@ function handleSelect(item) {
     }
   } else {
     selected = [item];
+    if(exists) {
+      selected.pop();
+    }
   }
 }
 </script>
@@ -62,7 +65,7 @@ function handleSelect(item) {
       class="
       relative flex items-center justify-center gap-3 px-3 py-1.5 rounded-3xl  font-medium transition-all duration-200 overflow-hidden
       {active 
-        ? 'bg-primary scale-x-105 rounded-lg text-on-primary shadow-sm' 
+        ? 'bg-primary rounded-lg text-on-primary shadow-sm' 
         : 'text-on-surface-variant bg-surface-container'}
       {item.style || ''}
       "
