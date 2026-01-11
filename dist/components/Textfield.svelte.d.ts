@@ -52,7 +52,7 @@ declare const Textfield: import("svelte").Component<{
      * - Blur event handler
      */
     onblur?: ((e: FocusEvent) => void) | undefined;
-}, {}, "">;
+}, {}, "value">;
 type TextFieldProps = {
     /**
      * - Input type (text, email, password, etc.)

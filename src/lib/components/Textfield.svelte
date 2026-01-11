@@ -35,11 +35,13 @@ let {
   type = "text",
   placeholder = "",
   class: className = "",
+  value = $bindable(),
   ...rest
 } = $props();
 </script>
 
 <input 
+  bind:value={value}
   class="p-3 border-2 border-outline-variant rounded-md transition-colors
          focus:border-primary focus:outline-none
          disabled:opacity-50 disabled:cursor-not-allowed

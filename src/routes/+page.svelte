@@ -17,17 +17,9 @@ const tabs = [
   { id: 'list', label: 'List View' },
   { id: 'board', label: 'Board View' }
 ];
-let isOpen = $state(false);
-  const toggleDrawer = () => (isOpen = !isOpen);
 </script>
 
 
-<Sidebar class="w-3/4" bind:isOpen>
-  <div class="flex w-full justify-between m-2">
-    <p class="text-2xl">Sidebar</p>
-    <Button class="md:hidden" onclick={toggleDrawer}>Close</Button>
-  </div>
-</Sidebar>
 
 <main class="p-3">
   <h1 class="text-3xl w-full text-center font-bold mb-3">Welcome</h1>
